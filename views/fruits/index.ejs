@@ -9,10 +9,13 @@
 </head>
 
 <body>
-    <h1>All Fruits</h1>
+    <div class="index-header-div">
+        <h1>All Fruits</h1>
+        <a href="/fruits/new" class="add-fruit">Add fruit</a>
+    </div>
     <ul>
         <% fruits.forEach(fruit => { %>
-        <li><a href="/fruits/<%= fruit._id %>"><%= fruit.name %></a></li>
+        <li><a class='fruit-cards' href="/fruits/<%= fruit._id %>"><%= fruit.name %></a></li>
         <% }); %>
     </ul>
 </body>
