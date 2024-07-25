@@ -23,7 +23,12 @@ app.get('/fruits/new', (req, res) => {
 });
 
 app.post('/fruits', async (req, res) => {
-    console.log(req.body);
+    if (req.body.isReadyToEat === 'on') {
+        req.body.isReadyToEat = true;
+    } else {
+        req.body.isReadyToEat = false;
+    };
+    await Fruit.create(req.body);
     res.redirect('/fruits/new');
 });
 
