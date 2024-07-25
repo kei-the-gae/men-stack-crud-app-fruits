@@ -1,9 +1,11 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
-const mongoose = require('mongoose');
 
 const app = express();
+const mongoose = require('mongoose');
+const methodOverride = require('method-override');
+const morgan = require('morgan');
 
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
@@ -13,6 +15,8 @@ mongoose.connection.on('connected', () => {
 const Fruit = require('./models/fruit.js');
 
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
+app.use(morgan('dev'));
 
 app.get('/', async (req, res) => {
     res.render('index.ejs');
