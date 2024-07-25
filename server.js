@@ -47,6 +47,11 @@ app.post('/fruits', async (req, res) => {
     res.redirect('/fruits');
 });
 
+app.delete('/fruits/:fruitId', async (req, res) => {
+    await Fruit.findByIdAndDelete(req.params.fruitId);
+    res.redirect('/fruits');
+});
+
 app.listen(3000, () => {
     console.log('Listening on port 3000');
 });
