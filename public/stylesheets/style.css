@@ -54,3 +54,44 @@ footer {
     background-color: #f47b5b;
     box-shadow: 0 2.5px #ffbd59;
 }
+
+form {
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #ffbd59;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 5px 6px #f47b5b;
+    margin: 20px 10px;
+}
+
+.checkbox-div {
+    flex-direction: row;
+}
+
+label,
+input {
+    margin: 10px 2px 0 2px;
+}
+
+button {
+    align-self: center;
+    margin: 10px 4px 4px 4px;
+    background-color: #3f6a51;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    width: 15em;
+}
+
+button:hover {
+    background-color: #769642;
+}
+
+button:active {
+    background-color: #2d4d3a;
+}
