@@ -12,12 +12,19 @@ mongoose.connection.on('connected', () => {
 
 const Fruit = require('./models/fruit.js');
 
+app.use(express.urlencoded({ extended: false }));
+
 app.get('/', async (req, res) => {
     res.render('index.ejs');
 });
 
 app.get('/fruits/new', (req, res) => {
     res.render('fruits/new.ejs');
+});
+
+app.post('/fruits', async (req, res) => {
+    console.log(req.body);
+    res.redirect('/fruits/new');
 });
 
 app.listen(3000, () => {
